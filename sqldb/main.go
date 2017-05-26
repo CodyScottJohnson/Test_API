@@ -12,18 +12,18 @@ import (
 )
 
 func Connect() (*gorm.DB, error){
-  writer := uilive.New()
-  writer.Start()
-  fmt.Fprintf(writer,chalk.Green.Color(chalk.Bold.TextStyle("..Connecting To Database...\n")))
+  writer2 := uilive.New()
+  writer2.Start()
+  fmt.Fprintf(writer2,chalk.Yellow.Color(chalk.Bold.TextStyle("()Connecting To Database\n")))
   time.Sleep(time.Millisecond * 5)
   db, err := gorm.Open("mysql", "cody:skiutah4969@tcp(jfsapp.com:3306)/JFS_v2?charset=utf8&parseTime=True&loc=Local")
   if err != nil{
-    fmt.Fprintf(writer,chalk.Red.Color( "Unable To Connect to Database:"), err,"\n")
+    fmt.Fprintf(writer2,chalk.Red.Color( "(-)Unable To Connect to Database:"), err,"\n")
     panic(chalk.Red.Color(err.Error()))
 
   }
-  fmt.Fprintf(writer,chalk.Blue.Color(chalk.Bold.TextStyle("(*) Connected to Database\n")))
-  writer.Stop()
+  fmt.Fprintf(writer2,chalk.Blue.Color(chalk.Bold.TextStyle("(*) Connected to Database\n")))
+  writer2.Stop()
   return db, nil
 
 }
