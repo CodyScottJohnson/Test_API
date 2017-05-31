@@ -6,8 +6,8 @@ import (
 	"Test_API/models"
 )
 
-var Email = graphql.NewObject(graphql.ObjectConfig{
-	Name: "Email",
+var Address = graphql.NewObject(graphql.ObjectConfig{
+	Name: "Address",
 	Fields: graphql.Fields{
 		"ID": &graphql.Field{
 			Type: graphql.String,
@@ -27,7 +27,16 @@ var Email = graphql.NewObject(graphql.ObjectConfig{
 				return p.Source.(models.Person).UpdatedAt, nil
 			},
 		},
-		"Email": &graphql.Field{
+		"Address": &graphql.Field{
+			Type: graphql.String,
+		},
+		"City": &graphql.Field{
+			Type: graphql.String,
+		},
+		"State": &graphql.Field{
+			Type: graphql.String,
+		},
+		"Post": &graphql.Field{
 			Type: graphql.String,
 		},
 		"Type": &graphql.Field{

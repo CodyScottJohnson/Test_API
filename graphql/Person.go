@@ -6,8 +6,8 @@ import (
 	"Test_API/models"
 )
 
-var User = graphql.NewObject(graphql.ObjectConfig{
-	Name: "User",
+var Person = graphql.NewObject(graphql.ObjectConfig{
+	Name: "Person",
 	Fields: graphql.Fields{
 		"ID": &graphql.Field{
 			Type: graphql.String,
@@ -31,6 +31,15 @@ var User = graphql.NewObject(graphql.ObjectConfig{
 			Type: graphql.String,
 		},
 		"LastName": &graphql.Field{
+			Type: graphql.String,
+		},
+		"Primary_Email": &graphql.Field{
+			Type: graphql.String,
+		},
+		"Primary_Address": &graphql.Field{
+			Type: graphql.String,
+		},
+		"Primary_Phone": &graphql.Field{
 			Type: graphql.String,
 		},
 		"Emails": &graphql.Field{
